@@ -17,12 +17,15 @@ int main()
         // updating elements of an array
         marks[i] *= 2;
     }
-    
+
+    marks[n + 1] = 1001;
 
     cout << "The marks are " << endl;
 
-    for (int i = 0; i < n; i++)
+    for (int i = 0; i <= n + 1; i++)
     {
         cout << marks[i] << ",";
     }
+    cout << endl;
+    cout << "we will see that the value at position " << n  << " is garbage" << endl;
 }
