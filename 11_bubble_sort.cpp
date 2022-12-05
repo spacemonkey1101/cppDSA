@@ -5,12 +5,13 @@ int *bubbleSort(int *a, int size)
 {
     for (int i = 0; i < size - 1; i++)
     {
-        for (int j = i + 1; j < size; j++)
+        for (int j = 0; j < size - 1 - i; j++)
         {
-            if(a[i] > a[j]){
-                int temp = a[i];
-                a[i] = a[j];
-                a[j] = temp;
+            if (a[j] > a[j + 1])
+            {
+                int temp = a[j];
+                a[j] = a[j + 1];
+                a[j + 1] = temp;
             }
         }
     }
