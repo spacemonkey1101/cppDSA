@@ -3,16 +3,22 @@ using namespace std;
 
 void selectionSort(int *a, int size)
 {
+    int min_index;
     for (int i = 0; i < size - 1; i++)
     {
         for (int j = i + 1; j < size; j++)
         {
             if (a[i] > a[j])
             {
-                int temp = a[j];
-                a[j] = a[i];
-                a[i] = temp;
+                min_index = j;
             }
+        }
+
+        if (i != min_index)
+        {
+            int temp = a[min_index];
+            a[min_index] = a[i];
+            a[i] = temp;
         }
     }
 }
