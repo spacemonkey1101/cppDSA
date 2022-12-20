@@ -15,6 +15,6 @@ int main()
         temp = cin.get();
     }
     sentence[len] = '\0';
-    cout << len + 1 << endl;
+    cout << len << endl;
     cout << sentence << endl;
 }
