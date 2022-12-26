@@ -20,7 +20,7 @@ void spiralPrint(int matrix[][4], int N, int M)
 
     while (start_col <= end_col && start_row <= end_row)
     {
-        // 1st row print
+         // 1st row print
         for (int i = start_col; i <= end_col; i++)
         {
             cout << matrix[start_row][i] << " ";
@@ -33,7 +33,7 @@ void spiralPrint(int matrix[][4], int N, int M)
         }
 
         // end row print
-        for (int i = end_col - 1; i >= 0; i--)
+        for (int i = end_col - 1; i >= start_col; i--)
         {
             if (start_row == end_row)
             {
