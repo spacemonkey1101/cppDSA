@@ -35,6 +35,7 @@ int main()
     int *p = 0;
     int *q = NULL;
 
-    cout << "dereferencing p " << *p << endl;
-    cout << "dereferencing q " << *q << endl;
+    // segmentation fault
+    // cout << "dereferencing p " << *p << endl;
+    // cout << "dereferencing q " << *q << endl;
 }
