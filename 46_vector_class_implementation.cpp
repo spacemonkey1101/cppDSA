@@ -11,10 +11,10 @@ class Vector
     // member function
 public:
     // constructor
-    Vector()
+    Vector(int max_capacity=1)
     {
         current_size = 0;
-        max_capacity = 1;
+        max_capacity = max_capacity;
         arr = new int[max_capacity];
     }
 
@@ -39,10 +39,45 @@ public:
 
     void pop_back()
     {
-        if (current_size >= 0)
+        if (current_size > 0)
         {
             current_size--;
         }
+    }
+
+    bool isEmpty()
+    {
+        if (current_size == 0)
+        {
+            return true;
+        }
+        return false;
+    }
+
+    int front()
+    {
+        if (!isEmpty())
+        {
+            return arr[0];
+        }
+        return -100000;
+    }
+
+    int back()
+    {
+        return arr[current_size - 1];
+    }
+
+    int elementAt(int i){
+        return arr[i]; 
+    }
+
+    int size(){
+        return current_size;
+    }
+
+    int capacity(){
+        return max_capacity;
     }
 };
 int main()
