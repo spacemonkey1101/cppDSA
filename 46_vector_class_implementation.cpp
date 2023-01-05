@@ -26,4 +26,15 @@ int main()
     {
         cout << v[i] << " ";
     }
+    cout << endl;
+
+    Vector<char> vc;
+    vc.push_back('C');
+    vc.push_back('d');
+
+    cout << "All the elements of the character vector " << endl;
+    for (int i = 0; i < vc.size(); i++)
+    {
+        cout << vc[i] << " ";
+    }
 }
