@@ -1,7 +1,8 @@
+template<typename T>
 class Vector
 {
     // data members
-    int *arr;
+    T *arr;
     int current_size;
     int max_capacity;
 
@@ -12,7 +13,7 @@ public:
     {
         current_size = 0;
         this->max_capacity = max_capacity;
-        arr = new int[max_capacity];
+        arr = new T[max_capacity];
     }
     // this function cant be made constant fucntion
     void push_back(const int element)
@@ -20,9 +21,9 @@ public:
         if (current_size == max_capacity)
         {
             // create the new array with the double size
-            int *old_arr = arr;
+            T *old_arr = arr;
             max_capacity *= 2;
-            arr = new int[max_capacity];
+            arr = new T[max_capacity];
             // copy the elements
             for (int i = 0; i < current_size; i++)
             {

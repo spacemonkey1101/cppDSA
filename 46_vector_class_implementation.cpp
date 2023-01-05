@@ -4,7 +4,9 @@
 using namespace std;
 int main()
 {
-    Vector v(5);
+    // our vector will only take int unlike the STL vector
+    // we need to make our container generic
+    Vector<int> v(5);
     v.push_back(1);
     v.push_back(2);
     v.push_back(3);
