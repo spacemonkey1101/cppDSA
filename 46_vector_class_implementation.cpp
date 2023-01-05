@@ -17,8 +17,8 @@ public:
         this->max_capacity = max_capacity;
         arr = new int[max_capacity];
     }
-
-    void push_back(int element)
+    //this function cant be made constant fucntion
+    void push_back(const int element)
     {
         if (current_size == max_capacity)
         {
@@ -45,7 +45,7 @@ public:
         }
     }
 
-    bool isEmpty()
+    bool isEmpty() const
     {
         if (current_size == 0)
         {
@@ -54,7 +54,7 @@ public:
         return false;
     }
 
-    int front()
+    int front() const
     {
         if (!isEmpty())
         {
@@ -63,24 +63,30 @@ public:
         return -100000;
     }
 
-    int back()
+    int back() const
     {
         return arr[current_size - 1];
     }
 
-    int elementAt(int i)
+    int elementAt(int i) const
     {
         return arr[i];
     }
-
-    int size()
+    // since size , capacity, elementAt,front, back function does not modify any attribute of the class
+    // we should make them constant
+    int size() const
     {
         return current_size;
     }
 
-    int capacity()
+    int capacity() const
     {
         return max_capacity;
+    }
+
+    int operator[](const int i)
+    {
+        return arr[i];
     }
 };
 int main()
@@ -100,8 +106,9 @@ int main()
     cout << v.size() << endl;
     cout << v.capacity() << endl;
 
-    cout<<"All the elements of the vector "<<endl;
-    for(int i = 0 ; i < v.size(); i++){
-        cout<<v.elementAt(i)<<" ";
+    cout << "All the elements of the vector " << endl;
+    for (int i = 0; i < v.size(); i++)
+    {
+        cout << v[i] << " ";
     }
 }
