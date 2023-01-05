@@ -3,20 +3,26 @@
 #include <algorithm>
 
 using namespace std;
-
-bool comparator(pair<string, int> s1, pair<string, int> s2)
+int calulateTotalMarks(vector<int> m)
 {
-    return s1.second > s2.second;
+    return m[0] + m[1] + m[2];
+}
+
+bool comparator(pair<string, vector<int>> s1, pair<string, vector<int>> s2)
+{
+    vector<int> m1 = s1.second;
+    vector<int> m2 = s2.second;
+    return calulateTotalMarks(m1) > calulateTotalMarks(m2);
 }
 
 int main()
 {
-    // this is a vector which has a pair
-    vector<pair<string, int>> students_marks = {
-        {"Rohit", 15},
-        {"Rohan", 20},
-        {"Ashish", 8},
-        {"Tanmay", 25}};
+    // this is a vector which has a pair of names and marks
+    vector<pair<string, vector<int>>> students_marks = {
+        {"Rohit", {15, 20, 30}},
+        {"Rohan", {20, 30, 10}},
+        {"Ashish", {8, 8, 8}},
+        {"Tanmay", {25, 10, 15}}};
 
     sort(students_marks.begin(), students_marks.end());
     cout << "This will be lexographically sorted" << endl;
