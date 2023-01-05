@@ -11,10 +11,10 @@ class Vector
     // member function
 public:
     // constructor
-    Vector(int max_capacity=1)
+    Vector(int max_capacity = 1)
     {
         current_size = 0;
-        max_capacity = max_capacity;
+        this->max_capacity = max_capacity;
         arr = new int[max_capacity];
     }
 
@@ -68,19 +68,40 @@ public:
         return arr[current_size - 1];
     }
 
-    int elementAt(int i){
-        return arr[i]; 
+    int elementAt(int i)
+    {
+        return arr[i];
     }
 
-    int size(){
+    int size()
+    {
         return current_size;
     }
 
-    int capacity(){
+    int capacity()
+    {
         return max_capacity;
     }
 };
 int main()
 {
-    Vector v;
+    Vector v(5);
+    v.push_back(1);
+    v.push_back(2);
+    v.push_back(3);
+    v.push_back(4);
+    v.push_back(5);
+    v.push_back(6);
+    v.pop_back();
+
+    cout << "element at front " << v.front() << endl;
+    cout << "element at back " << v.back() << endl;
+    cout << "element at second index " << v.elementAt(2) << endl;
+    cout << v.size() << endl;
+    cout << v.capacity() << endl;
+
+    cout<<"All the elements of the vector "<<endl;
+    for(int i = 0 ; i < v.size(); i++){
+        cout<<v.elementAt(i)<<" ";
+    }
 }
