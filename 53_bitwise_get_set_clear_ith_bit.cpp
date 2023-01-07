@@ -16,20 +16,31 @@ void setithBit(int &num, int bit)
     int mask = 1 << bit;
     num = num | mask;
 }
+
+void clearithBit(int &num, int bit)
+{
+    int mask = ~ (1 << bit);
+    num = num & mask;
+}
+
 int main()
 {
-    int n, gbit, sbit;
+    int n, gbit, sbit, cbit;
 
     cout << "Enter the number " << endl;
     cin >> n;
 
     cout << "Entet the bit you want to get " << endl;
     cin >> gbit;
-
     cout << "The " << gbit << "th bit is " << getithBit(n, gbit) << endl;
 
     cout << "Enter the bit you want to set" << endl;
     cin >> sbit;
     setithBit(n, sbit);
+    cout << "The new number is " << n << endl;
+
+    cout << "Enter the bit you want to clear " << endl;
+    cin >> cbit;
+    clearithBit(n, cbit);
     cout << "The new number is " << n << endl;
 }
