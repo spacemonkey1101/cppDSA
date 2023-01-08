@@ -1,27 +1,32 @@
 #include <iostream>
 
 using namespace std;
-int *firstOccurance(int *arr, int size, int key)
+int firstOccurance(int *arr, int size, int key)
 {
     if (size == 0)
     {
-        return NULL;
+        return -1;
     }
     if (arr[0] == key)
     {
-        return arr;
+        return 0;
     }
-    firstOccurance(arr + 1, size - 1, key);
+    int subindex = firstOccurance(arr + 1, size - 1, key);
+    if (subindex != -1)
+    {
+        return subindex + 1;
+    }
+    return -1;
 }
 int main()
 {
-    int arr[] = {1, 3, 5, 77, 6, 2};
+    int arr[] = {1, 3, 5, 7, 6, 2};
     int key = 7;
     int size = sizeof(arr) / sizeof(int);
-    int *res = firstOccurance(arr, size, key);
-    if (res)
+    int res = firstOccurance(arr, size, key);
+    if (res!=-1)
     {
-        cout << "The first occurance of " << key << " is in " << res - arr;
+        cout << "The first occurance of " << key << " is in " << res;
     }
     else
     {
