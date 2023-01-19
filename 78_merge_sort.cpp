@@ -38,7 +38,8 @@ void merge(vector<int> &arr, int start, int end)
     int k = 0;
     for (int i = start; i <= end; i++)
     {
-        arr[i] = temp[k++];
+        arr[i] = temp[k];
+        k++;
     }
 }
 
