@@ -20,7 +20,10 @@ void fillArray(int *arr, int i, int n)
         return;
     }
     arr[i] = i + 1;
+    // recursive case
     fillArray(arr, i + 1, n);
+    // backtracking step
+    arr[i] = arr[i] * -1;
 }
 
 int main()
@@ -32,7 +35,7 @@ int main()
     cin >> n;
 
     fillArray(arr, 0, n);
-    printArray(arr,n);
-    
+    printArray(arr, n);
+
     return 0;
 }
