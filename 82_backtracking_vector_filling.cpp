@@ -3,7 +3,7 @@
 
 using namespace std;
 
-void printArray(vector<int> v, int n)
+void printArray(vector<int> &v, int n)
 {
     for (int i = 0; i < n; i++)
     {
@@ -12,7 +12,7 @@ void printArray(vector<int> v, int n)
     cout << endl;
 }
 
-void fillArray(vector<int> v, int i, int n)
+void fillArray(vector<int> &v, int i, int n)
 {
     // base case
     if (i == n)
