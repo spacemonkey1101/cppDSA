@@ -40,7 +40,7 @@ void subset(char *input, char *output, int i, int j, vector<string> &res)
     output[j] = input[i];
     subset(input, output, i + 1, j + 1, res);
 
-    // include ith char
+    // exclude ith char
     output[j] = '\0';
     subset(input, output, i + 1, j, res);
 }
