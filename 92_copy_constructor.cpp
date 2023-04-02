@@ -30,10 +30,13 @@ public:
         strcpy(this->name, name);
     }
     // implement copy constructor
-    // override the default constructor -- we copy garbage
     Product(Product &X) // parameter X has to be a reference
     {                   // variable so that we should not create a separate copy
-        }
+        id = X.id;
+        mrp = X.mrp;
+        sp = X.sp;
+        strcpy(name, X.name);
+    }
     // getters
     int getMRP()
     {
@@ -89,5 +92,10 @@ int main()
     Product webcam(camera);
     cout << "Webcam details" << endl;
     webcam.showDetails();
+
+    // This also calls the copy constructor
+    Product handycam = camera;
+    cout << "HandyCam details" << endl;
+    handycam.showDetails();
     return 0;
 }
