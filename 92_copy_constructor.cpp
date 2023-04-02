@@ -29,6 +29,11 @@ public:
         this->sp = sp;
         strcpy(this->name, name);
     }
+    // implement copy constructor
+    // override the default constructor -- we copy garbage
+    Product(Product &X) // parameter X has to be a reference
+    {                   // variable so that we should not create a separate copy
+        }
     // getters
     int getMRP()
     {
