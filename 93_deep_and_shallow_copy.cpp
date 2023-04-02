@@ -33,14 +33,15 @@ public:
         this->name = new char[strlen(name) + 1];
         strcpy(this->name, name);
     }
-    // This is how shallow copy happens 
-    // Blindly copying values
+
+    // Implementing DEEP COPY
     Product(Product &X)
     {
         id = X.id;
         mrp = X.mrp;
         sp = X.sp;
-        name = X.name;
+        name = new char[strlen(X.name) + 1];
+        strcpy(name, X.name);
     }
 
     int getMRP()
@@ -95,8 +96,10 @@ int main()
 {
     Product camera(101, 1000, 800, "new cam");
     // We need out own constructor to do a DEEP COPY
+    // This calls out own constructor
     Product old_camera(camera);
 
+    // changes value for only this object
     old_camera.setName("old cam");
 
     // the below code does not change properties of both
