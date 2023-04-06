@@ -5,6 +5,8 @@
  dynamically allocated objects i.e, a deep copy of objects are needed.
 
  We will make name a pointer to a dynamic array
+
+ DEEP Copy is only possible through a user defined copy constructor
 */
 #include <iostream>
 #include <cstring>
