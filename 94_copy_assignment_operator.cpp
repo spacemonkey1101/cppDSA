@@ -42,6 +42,16 @@ public:
         strcpy(name, X.name);
     }
 
+    // implementing copy assignment operator to implement deep copy
+    void operator=(Product &X)
+    {
+        id = X.id;
+        name = new char[strlen(X.name) + 1];
+        strcpy(name, X.name);
+        sp = X.sp;
+        mrp = X.mrp;
+    }
+
     int getMRP()
     {
         return mrp;
