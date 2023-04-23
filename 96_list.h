@@ -14,7 +14,7 @@ public:
         this->data = data;
         this->next = NULL;
     }
-}
+};
 
 class List
 {
