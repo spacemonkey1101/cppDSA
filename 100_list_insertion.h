@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-class List; // forward declaration
+class List;
 class Node
 {
     int data;
@@ -13,10 +13,7 @@ public:
         this->data = data;
         this->next = NULL;
     }
-    friend class List; // declared in the base class
-    // A friend class can access private and protected members of other classes in which it is declared as a friend
-
-    // List is not defined here we need to do a forward declaration here.
+    friend class List;
 };
 
 class List
@@ -64,12 +61,25 @@ public:
         Node *iterator = head;
         while (iterator != NULL)
         {
-
-            // data and next cannot be accessed here without making
-            // List a friend to Node
             cout << iterator->data << ",";
             iterator = iterator->next;
         }
         cout << endl;
+    }
+
+    void insert(int data, int pos)
+    {
+        if(pos == 0){
+            push_front(data);
+            return;
+        }
+        Node *iterator = head;
+        for (int jump = 1; jump <= pos - 1; jump++)
+        {
+            iterator = iterator->next;
+        }
+        Node *n = new Node(data);
+        n->next = iterator->next;
+        iterator->next = n;
     }
 };

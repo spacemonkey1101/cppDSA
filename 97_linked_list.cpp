@@ -1,5 +1,5 @@
 #include <iostream>
-#include "99_list_printing.h"
+#include "100_list_insertion.h"
 
 using namespace std;
 
@@ -8,7 +8,14 @@ int main()
     List l;
     l.push_front(1);
     l.push_front(0);
-    l.push_back(2);
+    l.push_back(3);
     l.print_list();
+    // 0 1 3
+    l.insert(2,2);
+    l.print_list();
+    //0 1 2 3
+    l.insert(10,0);
+    l.print_list();
+    //10 0 1 2 3
     return 0;
 }
