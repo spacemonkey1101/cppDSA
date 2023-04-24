@@ -1,5 +1,5 @@
 #include <iostream>
-#include "101_list_linear_search.h"
+#include "102_list_recursive_search.h"
 
 using namespace std;
 
@@ -21,5 +21,10 @@ int main()
     cout << l.search(10) << endl;  // 0
     cout << l.search(2) << endl;   // 3
     cout << l.search(101) << endl; //-1
+
+    cout << l.recursiveSearch(101) << endl; //-1
+    cout << l.recursiveSearch(2) << endl;   // 3
+    cout << l.recursiveSearch(10) << endl;  // 0
+
     return 0;
 }
