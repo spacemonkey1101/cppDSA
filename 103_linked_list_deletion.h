@@ -131,7 +131,7 @@ public:
     {
         if (head != NULL)
         {
-            cout << "Deleting head with value " << head->data << endl;
+            cout << "Calling delete on head with value " << head->data << endl;
             delete head;
             head = NULL; // for safety
         }
