@@ -1,5 +1,5 @@
 #include <iostream>
-#include "104_linked_list_pop_front.h"
+#include "106_linked_list_pop_back.h"
 
 using namespace std;
 
@@ -21,13 +21,33 @@ int main()
     l.pop_front();
     l.print_list();
     // 0 1 2 3
-    cout << l.search(10) << endl;  // 0
+
+    l.pop_front();
+    l.print_list();
+    // 1 2 3
+
+    l.pop_back();
+    l.print_list();
+    // 1 2
+
+    l.pop_back();
+    l.print_list();
+    // 1
+
+    l.pop_back();
+    l.print_list();
+    // empty
+
+    l.pop_back();
+    l.pop_front();
+
+    /*cout << l.search(10) << endl;  // 0
     cout << l.search(2) << endl;   // 3
     cout << l.search(101) << endl; //-1
 
     cout << l.recursiveSearch(101) << endl; //-1
     cout << l.recursiveSearch(2) << endl;   // 3
     cout << l.recursiveSearch(10) << endl;  // 0
-
+    */
     return 0;
 }
