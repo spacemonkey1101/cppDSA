@@ -1,5 +1,5 @@
 #include <iostream>
-#include "103_linked_list_deletion.h"
+#include "104_linked_list_pop_front.h"
 
 using namespace std;
 
@@ -18,7 +18,8 @@ int main()
     l.print_list();
     // 10 0 1 2 3
 
-//    l.print_list();
+    l.pop_front();
+    l.print_list();
     // 0 1 2 3
     cout << l.search(10) << endl;  // 0
     cout << l.search(2) << endl;   // 3
