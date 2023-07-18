@@ -8,8 +8,7 @@ bool duplicateParentheses(string str){
         if(str[i] == ')' && !s.empty() && s.top() == '('){
             return true;
         }
-        
-        if(str[i] == ')'){
+        else if(str[i] == ')'){
             while(!s.empty()){
                 if(s.top() == '('){
                     s.pop();
@@ -17,7 +16,9 @@ bool duplicateParentheses(string str){
                 }
                 s.pop();
             }
-        } else{
+        } 
+        else if(str[i] == '+' || str[i] == '-' || str[i] == '*' || 
+        str[i] == '/' || str[i] == '(' ){
             s.push(str[i]);
         }
     }
@@ -25,6 +26,6 @@ bool duplicateParentheses(string str){
 }
 
 int main(){
-    string str = "((a+b)+((c+d)))";
+    string str = "(c)";
     cout<<duplicateParentheses(str);
 }
