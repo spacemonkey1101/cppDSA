@@ -39,7 +39,6 @@ public:
     {
         if (!empty())
         {
-            int res = arr[qfront];
             qfront = (qfront + 1) % max_size;
             curr_size--;
         }
