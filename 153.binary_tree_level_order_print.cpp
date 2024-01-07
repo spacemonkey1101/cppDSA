@@ -40,7 +40,7 @@ void level_order_traversal(Node *root)
     q.push(root);
     q.push(NULL);
 
-    while (!q.empty() && !(q.size() == 1 && q.front() == NULL))
+    while (!q.empty())
     {
         Node *t = q.front();
 
