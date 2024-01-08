@@ -50,9 +50,9 @@ int height(Node *root)
     {
         return 0;
     }
-    int left_height = 1 + height(root->left);
-    int right_height = 1 + height(root->right);
-    return max(left_height, right_height);
+    int left_height = height(root->left);
+    int right_height = height(root->right);
+    return 1 + max(left_height, right_height);
 }
 int main()
 {
